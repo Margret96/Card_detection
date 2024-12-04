@@ -126,7 +126,7 @@ if __name__ == '__main__':
 		#frame = cv2.imread('sample.jpg')
 
 		# Give the weight files to the model and load the network using them.
-		modelWeights_slow = "models/yolov5s.onnx" # Slower model (middle of the three available)
+		#modelWeights_slow = "models/yolov5s.onnx" # Slower model (middle of the three available)
 		modelWeights_fast = "models/yolov5n.onnx" # Faster model
 
 		#net_slow = cv2.dnn.readNet(modelWeights_small)
