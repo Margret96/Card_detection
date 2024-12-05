@@ -3,7 +3,7 @@ import torch
 from ultralytics import YOLO
 
 # Load YOLOv8 model
-model = YOLO("best.pt")  
+model = YOLO("models/best.pt")  
 
 # Initialize webcam
 cap = cv2.VideoCapture(1)  # 0 for default webcam
