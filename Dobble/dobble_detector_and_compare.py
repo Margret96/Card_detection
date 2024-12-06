@@ -9,7 +9,7 @@ model = YOLO("models/dobble_best_small_dataset_14epoch.pt")  # Use your trained 
 class_names = model.names  # Dictionary mapping class indices to names
 
 # Initialize webcam
-cap = cv2.VideoCapture(1)  # Adjust index for your webcam
+cap = cv2.VideoCapture(0)  # Adjust index for your webcam
 
 def get_detections(results):
     """Extract bounding boxes, class labels, and confidences from YOLO results."""
