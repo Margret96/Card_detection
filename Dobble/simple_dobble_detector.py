@@ -3,10 +3,11 @@ import torch
 from ultralytics import YOLO
 
 # Load YOLOv8 model
-model = YOLO("models/dobble_best.pt")  
+#model = YOLO("models/nytt_dobble_best_3epoch.pt")  # Stærra dataset úr 3 epoch (57 klasar, vantar suma úr okkar spili, nokkrir auka klasar frá þeim)
+model = YOLO("models/dobble_best.pt") # Minna datasetið (39 klasar)
 
 # Initialize webcam
-cap = cv2.VideoCapture(0)  # 0 for default webcam
+cap = cv2.VideoCapture(1)  # 0 for default webcam
 
 while True:
     # Read frame from webcam
