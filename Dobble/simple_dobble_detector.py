@@ -5,7 +5,8 @@ from ultralytics import YOLO
 # Load YOLOv8 model
 #model = YOLO("models/nytt_dobble_best_3epoch.pt")  # Stærra dataset úr 3 epoch (57 klasar, vantar suma úr okkar spili, nokkrir auka klasar frá þeim)
 #model = YOLO("models/dobble_best_small_dataset_14epoch.pt") # Minna datasetið (39 klasar), trainað í 14 epoch
-model = YOLO("models/combo_model.pt") # Combination of the playing cards and the dobble cards
+#model = YOLO("models/combo_model.pt") # Combination of the playing cards and the dobble cards
+model = YOLO("models/symbol-detection-larger-dataset-25-epoch.onnx") # Model from Eyþór
 
 # Initialize webcam
 cap = cv2.VideoCapture(1)  # 0 for default webcam

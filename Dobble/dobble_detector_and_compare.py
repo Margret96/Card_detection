@@ -4,6 +4,7 @@ from ultralytics import YOLO
 
 # Load YOLOv8 model
 model = YOLO("models/dobble_best_small_dataset_14epoch.pt")  # Use your trained model
+#model = YOLO("models/symbol-detection-larger-dataset-25-epoch.onnx") # Model from Eyþór
 
 # Access class names from the model
 class_names = model.names  # Dictionary mapping class indices to names
@@ -24,6 +25,9 @@ def get_detections(results):
     return detections
 
 while True:
+    # Start frame timer
+    start_time = cv2.getTickCount()
+
     # Read frame from webcam
     ret, frame = cap.read()
     if not ret:
@@ -67,6 +71,22 @@ while True:
             text_y = int(bbox[1]) - 5  # Position above the bounding box
             cv2.rectangle(frame, (text_x, text_y - text_size[1]), (text_x + text_size[0], text_y), color, -1)  # Background for text
             cv2.putText(frame, label, (text_x, text_y), font, font_scale, (255, 255, 255), thickness)
+
+    # Calculate FPS
+    end_time = cv2.getTickCount()
+    time_per_frame = (end_time - start_time) / cv2.getTickFrequency()  # Time for one frame in seconds
+    fps = 1.0 / time_per_frame
+
+    # Display FPS on screen
+    fps_label = f"FPS: {fps:.2f}"
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    font_scale = 0.75
+    thickness = 2
+    text_size = cv2.getTextSize(fps_label, font, font_scale, thickness)[0]
+    text_x = 10  # Top-left corner
+    text_y = 30  # Slightly below the top
+    cv2.rectangle(frame, (text_x, text_y - text_size[1]), (text_x + text_size[0], text_y + 5), (0, 0, 0), -1)  # Background for FPS
+    cv2.putText(frame, fps_label, (text_x, text_y), font, font_scale, (255, 255, 255), thickness)
 
     # Display the frame with detections
     cv2.imshow("YOLOv8 Object Detection", frame)
