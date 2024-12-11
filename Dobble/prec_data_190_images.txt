@@ -1,0 +1,11 @@
+Fyrir nýja datasetið (190 myndir)
+
+Mean Average Precision @.5:.95 : 0.07431336363636365
+Mean Average Precision @ .50   : 0.08080272727272728
+Mean Average Precision @ .70   : 0.08080272727272728
+
+Combine:
+
+Mean Average Precision @.5:.95 : 0.212592196969697
+Mean Average Precision @ .50   : 0.24695112121212123
+Mean Average Precision @ .70   : 0.23561778787878787

@@ -1,0 +1,31 @@
+TRAIN:
+
+V3 - no augmentation (sama og gamla okkar(190myndir))
+V4 - with augmentation (makes the dataset bigger)
+
+
+train1:
+V3 - v8:
+Mean Average Precision @.5:.95 : 0.8952753920973747
+Mean Average Precision @ .50   : 0.9372490209310745
+Mean Average Precision @ .70   : 0.9217071790524972
+
+train2:
+V3 - gamla(39 classes)
+Mean Average Precision @.5:.95 : 0.8919524759226877
+Mean Average Precision @ .50   : 0.935274335878997
+Mean Average Precision @ .70   : 0.9189461373786657
+
+
+
+train3:
+V4 - v8
+Mean Average Precision @.5:.95 : 0.8960955734650144
+Mean Average Precision @ .50   : 0.9367433115103089
+Mean Average Precision @ .70   : 0.9229897284680126
+
+train4:
+v4 - gamla(39 classes)
+Mean Average Precision @.5:.95 : 0.9002188769013976
+Mean Average Precision @ .50   : 0.9430869445946564
+Mean Average Precision @ .70   : 0.9250445440672882
