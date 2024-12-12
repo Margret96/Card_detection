@@ -1,0 +1,5 @@
+For 39 class dataset:
+
+Mean Average Precision @.5:.95 : 0.569631817899266
+Mean Average Precision @ .50   : 0.7357717553713053
+Mean Average Precision @ .70   : 0.6744105148994026

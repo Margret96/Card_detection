@@ -52,6 +52,7 @@ while True:
 
     # Find matching symbols
     matches = [cls for cls, boxes in class_counts.items() if len(boxes) > 1]
+    matching_symbols = [class_names[cls] for cls in matches]  # Get the class names of matching symbols
 
     # Highlight matches and add labels
     for detection in detections:
@@ -88,6 +89,16 @@ while True:
     text_y = 30  # Slightly below the top
     cv2.rectangle(frame, (text_x, text_y - text_size[1]), (text_x + text_size[0], text_y + 5), (0, 0, 0), -1)  # Background for FPS
     cv2.putText(frame, fps_label, (text_x, text_y), font, font_scale, (255, 255, 255), thickness)
+
+    # Display matching symbols under the FPS
+    if matching_symbols:
+        matching_label = f"Matching: {', '.join(matching_symbols)}"
+        matching_text_size = cv2.getTextSize(matching_label, font, font_scale, thickness)[0]
+        matching_text_x = 10  # Same x position as FPS
+        matching_text_y = text_y + 30  # Position directly below the FPS
+        cv2.rectangle(frame, (matching_text_x, matching_text_y - matching_text_size[1]), 
+                      (matching_text_x + matching_text_size[0], matching_text_y + 5), (0, 0, 0), -1)  # Background for matching text
+        cv2.putText(frame, matching_label, (matching_text_x, matching_text_y), font, font_scale, (255, 255, 255), thickness)
 
     # Display the frame with detections
     cv2.imshow("YOLOv8 Object Detection", frame)
