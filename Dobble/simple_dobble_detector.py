@@ -3,8 +3,8 @@ import torch
 from ultralytics import YOLO
 
 # Load YOLOv8 model
-model = YOLO("models_okkar/dobble_best_v4_combine.pt")
-#model = YOLO("models/test_best.pt")
+model = YOLO("models/dobble_best_v4_combine.pt")
+#model = YOLO("models/test_best.pt") # 57 class model modified to have only 1 label..
 
 # Initialize webcam
 cap = cv2.VideoCapture(1)  # 0 for default webcam

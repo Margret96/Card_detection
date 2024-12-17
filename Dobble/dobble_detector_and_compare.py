@@ -4,8 +4,7 @@ from ultralytics import YOLO
 
 # Load YOLOv8 model
 #model = YOLO("models/dobble_best_small_dataset_14epoch.pt")  # 39 class label model
-model = YOLO("models_okkar/dobble_best_v4_combine.pt")  # Use your trained model
-#model = YOLO("models/symbol-detection-larger-dataset-25-epoch.onnx") # Model from Eyþór
+model = YOLO("models/dobble_best_v4_combine.pt")  # Use your trained model
 
 # Access class names from the model
 class_names = model.names  # Dictionary mapping class indices to names
